@@ -3,18 +3,18 @@ const hre = require("hardhat");
 
 async function main() {
   
-  const lock = await hre.ethers.deployContract("Lock");
+  const chatApp = await hre.ethers.deployContract("ChatApp");
 
-  await lock.waitForDeployment();
+  await chatApp.waitForDeployment();
 
   console.log(
-    `Contract Address: ${lock.target}`
+    `Contract Address: ${chatApp.target}`
   );
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+// npx hardhat node
+// npx hardhat run scripts/deploy.js --network localhost
