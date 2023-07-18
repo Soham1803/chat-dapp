@@ -61,10 +61,10 @@ export const ChatAppProvider = ({ children }) => {
 
   //CREATE ACCOUNT
   const createAccount = async ({ name }) => {
-    console.log(name, account);
+    // console.log(name, account);
     try {
-      if (!name || !account)
-        return setError("Name And Account Address, cannot be empty");
+      // if (!name || !account)
+      //   return setError("Name And Account Address, cannot be empty");
 
       const contract = await connectingWithContract();
       console.log(contract);
@@ -75,7 +75,7 @@ export const ChatAppProvider = ({ children }) => {
       setLoading(false);
       window.location.reload();
     } catch (error) {
-      setError("Error while creating your account Pleas reload browser");
+      setError("Error while creating your account. Please reload browser");
     }
   };
 

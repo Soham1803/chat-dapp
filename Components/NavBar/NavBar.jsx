@@ -127,10 +127,10 @@ const NavBar = () => {
         <div className={Style.modelBox}>
           <Model
             openBox={setOpenModel}
-            title="WELCOME TO"
-            head="CHAT BUDDY"
-            info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
-            smallInfo="Kindley seclet your name..."
+            title="Welcome To"
+            head="Decentralized Chat App"
+            info="Join the Web3.0 revolution and say YES to enhanced privacy, security, transparency... No centralised server, no censorship, no 3rd party accessing your data.."
+            smallInfo="Type in your name..."
             image={images.hero}
             functionName={createAccount}
             address={account}
