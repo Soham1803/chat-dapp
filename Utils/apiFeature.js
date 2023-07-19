@@ -54,7 +54,6 @@ export const connectingWithContract = async () => {
   }
 };
 
-///timestamp for chat messages
 export const converTime = (time) => {
   const newTime = new Date(time.toNumber());
 
