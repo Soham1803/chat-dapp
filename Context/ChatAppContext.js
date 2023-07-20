@@ -99,7 +99,7 @@ export const ChatAppProvider = ({ children }) => {
   const sendMessage = async ({ msg, address }) => {
     console.log(msg, address);
     try {
-      if (!msg || !address) return setError("Please Type your Message");
+      // if (!msg || !address) return setError("Please Type your Message");
 
       const contract = await connectingWithContract();
       const addMessage = await contract.sendMessage(address, msg);
