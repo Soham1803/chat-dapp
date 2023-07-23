@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 //INTERNAL IMPORT
-import { ChechIfWalletConnected, connectWallet,connectingWithContract,} from "../Utils/apiFeature";
+import {
+  ChechIfWalletConnected,
+  connectWallet,
+  connectingWithContract,
+} from "../Utils/apiFeature";
 
 export const ChatAppContect = React.createContext();
 
 export const ChatAppProvider = ({ children }) => {
-  
+  //USESTATE
   const [account, setAccount] = useState("");
   const [userName, setUserName] = useState("");
   const [friendLists, setFriendLists] = useState([]);
@@ -63,8 +67,8 @@ export const ChatAppProvider = ({ children }) => {
   const createAccount = async ({ name }) => {
     console.log(name, account);
     try {
-      // if (!name || !account)
-      //   return setError("Name And Account Address, cannot be empty");
+      if (!name || !account)
+        return setError("Name And Account Address, cannot be empty");
 
       const contract = await connectingWithContract();
       console.log(contract);
@@ -75,7 +79,7 @@ export const ChatAppProvider = ({ children }) => {
       setLoading(false);
       window.location.reload();
     } catch (error) {
-      setError("Error while creating your account. Please reload browser");
+      setError("Error while creating your account Pleas reload browser");
     }
   };
 
@@ -99,7 +103,7 @@ export const ChatAppProvider = ({ children }) => {
   const sendMessage = async ({ msg, address }) => {
     console.log(msg, address);
     try {
-      // if (!msg || !address) return setError("Please Type your Message");
+      if (!msg || !address) return setError("Please Type your Message");
 
       const contract = await connectingWithContract();
       const addMessage = await contract.sendMessage(address, msg);

@@ -1,20 +1,19 @@
-
 const hre = require("hardhat");
 
 async function main() {
-  
-  const chatApp = await hre.ethers.deployContract("ChatApp");
+  const ChatApp = await hre.ethers.getContractFactory("ChatApp");
+  const chatApp = await ChatApp.deploy();
 
-  await chatApp.waitForDeployment();
+  await chatApp.deployed();
 
-  console.log(
-    `Contract Address: ${chatApp.target}`
-  );
+  console.log(` Contract Address: ${chatApp.address}`);
 }
 
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
 // npx hardhat node
 // npx hardhat run scripts/deploy.js --network localhost
+// "ethers": "^5.7.2",

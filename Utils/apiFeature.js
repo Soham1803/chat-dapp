@@ -5,14 +5,15 @@ import { ChatAppAddress, ChatAppABI } from "../Context/constants";
 
 export const ChechIfWalletConnected = async () => {
   try {
-    if (!window.ethereum) return console.log("Install MetaMask");
+    if (!window.ethereum) return console.log("Install MateMask");
 
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
     });
 
-    const firstAccount = accounts[0];
-    return firstAccount;
+    // const firstAccount = accounts[0];
+    const secAccount = accounts[1];
+    return secAccount;
   } catch (error) {
     console.log(error);
   }

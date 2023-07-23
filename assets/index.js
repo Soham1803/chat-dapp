@@ -12,6 +12,7 @@ import create from "./create.png";
 import create2 from "./create2.png";
 import buddy from "./buddy.png";
 import hero from "./hero.png";
+import hero2 from "./hero2.png";
 import account from "./account.png";
 import username from "./username.png";
 import friends from "./friends.png";
@@ -45,6 +46,7 @@ export default {
   create2,
   buddy,
   hero,
+  hero2,
   account,
   username,
   friends,

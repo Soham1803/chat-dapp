@@ -15,17 +15,9 @@ const NavBar = () => {
       link: "alluser",
     },
     {
-      menu: "CHAT",
+      menu: "Chats",
       link: "/",
-    },
-    {
-      menu: "CONTACT",
-      link: "/",
-    },
-    {
-      menu: "SETTING",
-      link: "/",
-    },
+    }
   ];
 
   //USESTATE
@@ -128,10 +120,10 @@ const NavBar = () => {
           <Model
             openBox={setOpenModel}
             title="Welcome To"
-            head="Decentralized Chat App"
-            info="Join the Web3.0 revolution and say YES to enhanced privacy, security, transparency... No centralised server, no censorship, no 3rd party accessing your data.."
-            smallInfo="Type in your name..."
-            image={images.hero}
+            head="Decentralised Chat App"
+            info="Say NO to censorship, data leaks, privacy breach and centralised control, say YES to Web3.0, privacy, end to end security and decentralisation"
+            smallInfo="Please fill in your details...."
+            image={images.hero2}
             functionName={createAccount}
             address={account}
           />

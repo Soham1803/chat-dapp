@@ -15,20 +15,10 @@ const Filter = () => {
   return (
     <div className={Style.Filter}>
       <div className={Style.Filter_box}>
-        <div className={Style.Filter_box_left}>
-          <div className={Style.Filter_box_left_search}>
-            <Image src={images.search} alt="image" width={20} height={20} />
-            <input type="text" placeholder="search.." />
-          </div>
-        </div>
         <div className={Style.Filter_box_right}>
-          <button>
-            <Image src={images.clear} alt="clear" width={20} height={20} />
-            CLEAR CHAT
-          </button>
           <button onClick={() => setAddFriend(true)}>
             <Image src={images.user} alt="clear" width={20} height={20} />
-            ADD FRIEND
+            Add Friend
           </button>
         </div>
       </div>
@@ -38,10 +28,10 @@ const Filter = () => {
         <div className={Style.Filter_model}>
           <Model
             openBox={setAddFriend}
-            title="WELCOME TO"
-            head="CHAT BUDDY"
-            info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sit doloribus quod vel expedita, dicta voluptatibus, nemo, deserunt minima quis recusandae porro officiis modi fugiat libero tempora corporis necessitatibus itaque!"
-            smallInfo="Kindley Select Your Friend Name & Address.."
+            title="Welcome To"
+            head="Decentralised Chat App"
+            info="Say NO to censorship, data leaks, privacy breach and centralised control, say YES to Web3.0, privacy, end to end security and decentralisation"
+            smallInfo="Please fill in your details...."
             image={images.hero}
             functionName={addFriends}
           />
