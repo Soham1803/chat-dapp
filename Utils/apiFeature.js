@@ -4,16 +4,17 @@ import Web3Modal from "web3modal";
 import { ChatAppAddress, ChatAppABI } from "../Context/constants";
 
 export const ChechIfWalletConnected = async () => {
+  alert("Install MetaMask");
   try {
-    if (!window.ethereum) return console.log("Install MateMask");
+    if (!window.ethereum) return console.log("Install MetaMask");
 
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
     });
 
-    // const firstAccount = accounts[0];
-    const secAccount = accounts[1];
-    return secAccount;
+    const firstAccount = accounts[0];
+    // const secAccount = accounts[1];
+    return firstAccount;
   } catch (error) {
     console.log(error);
   }
