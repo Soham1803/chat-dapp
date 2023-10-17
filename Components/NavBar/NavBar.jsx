@@ -4,7 +4,7 @@ import Link from "next/link";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { ChatAppContect } from "../../Context/ChatAppContext";
+import { ChatAppContext } from "../../Context/ChatAppContext";
 import { Model, Error } from "../index";
 import images from "../../assets";
 
@@ -26,7 +26,7 @@ const NavBar = () => {
   const [openModel, setOpenModel] = useState(false);
 
   const { account, userName, connectWallet, createAccount, error } =
-    useContext(ChatAppContect);
+    useContext(ChatAppContext);
   return (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
@@ -121,7 +121,7 @@ const NavBar = () => {
             openBox={setOpenModel}
             title="Welcome To"
             head="Decentralised Chat App"
-            info="Say NO to censorship, data leaks, privacy breach and centralised control, say YES to Web3.0, privacy, end to end security and decentralisation"
+            info=""
             smallInfo="Please fill in your details...."
             image={images.hero2}
             functionName={createAccount}

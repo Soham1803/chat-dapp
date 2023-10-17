@@ -4,11 +4,11 @@ import Image from "next/image";
 //INTERNAL IMPORT
 import Style from "./Filter.module.css";
 import images from "../../assets";
-import { ChatAppContect } from "../../Context/ChatAppContext";
+import { ChatAppContext } from "../../Context/ChatAppContext";
 import { Model } from "../index";
 
 const Filter = () => {
-  const { account, addFriends } = useContext(ChatAppContect);
+  const { account, addFriends } = useContext(ChatAppContext);
 
   //USESTATE
   const [addFriend, setAddFriend] = useState(false);
@@ -30,7 +30,7 @@ const Filter = () => {
             openBox={setAddFriend}
             title="Welcome To"
             head="Decentralised Chat App"
-            info="Say NO to censorship, data leaks, privacy breach and centralised control, say YES to Web3.0, privacy, end to end security and decentralisation"
+            info=""
             smallInfo="Please fill in your details...."
             image={images.hero}
             functionName={addFriends}

@@ -8,7 +8,7 @@ import {
   connectingWithContract,
 } from "../Utils/apiFeature";
 
-export const ChatAppContect = React.createContext();
+export const ChatAppContext = React.createContext();
 
 export const ChatAppProvider = ({ children }) => {
   //USESTATE
@@ -19,6 +19,8 @@ export const ChatAppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [userLists, setUserLists] = useState([]);
   const [error, setError] = useState("");
+
+  console.log(`FriendList: ${friendLists}`);
 
   //CHAT USER DATA
   const [currentUserName, setCurrentUserName] = useState("");
@@ -67,8 +69,8 @@ export const ChatAppProvider = ({ children }) => {
   const createAccount = async ({ name }) => {
     console.log(name, account);
     try {
-      if (!name || !account)
-        return setError("Name And Account Address, cannot be empty");
+      // if (!name || !account)
+      //   return setError("Name And Account Address, cannot be empty");
 
       const contract = await connectingWithContract();
       console.log(contract);
@@ -86,7 +88,7 @@ export const ChatAppProvider = ({ children }) => {
   //ADD YOUR FRIENDS
   const addFriends = async ({ name, userAddress }) => {
     try {
-      if (!name || !userAddress) return setError("Please provide data");
+      // if (!name || !userAddress) return setError("Please provide data");
       const contract = await connectingWithContract();
       const addMyFriend = await contract.addFriend(userAddress, name);
       setLoading(true);
@@ -124,7 +126,7 @@ export const ChatAppProvider = ({ children }) => {
     setCurrentUserAddress(userAddress);
   };
   return (
-    <ChatAppContect.Provider
+    <ChatAppContext.Provider
       value={{
         readMessage,
         createAccount,
@@ -145,6 +147,6 @@ export const ChatAppProvider = ({ children }) => {
       }}
     >
       {children}
-    </ChatAppContect.Provider>
+    </ChatAppContext.Provider>
   );
 };
